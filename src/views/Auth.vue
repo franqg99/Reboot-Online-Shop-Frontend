@@ -1,9 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <v-content>
-      <h1>LOIS!... este no es mi vaso de Batman</h1>
-    </v-content>
+    <h1>LOIS!... este no es mi vaso de Batman</h1>
   </div>
 </template>
 

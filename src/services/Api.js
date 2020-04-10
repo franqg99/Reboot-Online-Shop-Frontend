@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://reboot-online-store.herokuapp.com/api",
+  baseURL: "http://localhost:3000/api",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json"
@@ -13,6 +13,16 @@ export default {
     const response = await API.post("/auth/signup", {
       ...newUser
     });
+    return response.data;
+  },
+
+  async getAllProducts() {
+    const response = await API.get("/products");
+    return response.data;
+  },
+
+  async showProduct(mySearch) {
+    const response = await API.get(`/products?search=${mySearch}`);
     return response.data;
   }
 };
