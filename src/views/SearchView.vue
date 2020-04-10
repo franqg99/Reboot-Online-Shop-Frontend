@@ -21,9 +21,7 @@ export default {
     this.$root.$on("mySearch", mySearch => {
       this.search(mySearch);
     });
-    Api.getAllProducts().then(serviceProducts => {
-      this.products = serviceProducts;
-    });
+    this.search(this.$route.params.mySearch);
   },
   methods: {
     search: function(query) {

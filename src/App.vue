@@ -16,16 +16,26 @@ import Menu from "@/components/Menu.vue";
 
 export default {
   name: "App",
-
+  // data() {
+  //   return {
+  //     productsList: []
+  //   };
+  // },
   components: {
     Navbar,
     Search,
     Footer,
     Menu
   },
-
-  data: () => ({
-    //
-  })
+  methods: {
+    addToCart(newProduct) {
+      this.$root.$emit("addtocart", newProduct);
+    }
+  },
+  mounted() {
+    this.$on("addtocart", newProduct => {
+      this.productsList.push(newProduct);
+    });
+  }
 };
 </script>

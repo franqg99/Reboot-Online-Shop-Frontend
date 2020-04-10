@@ -46,14 +46,14 @@ export default {
   data() {
     return {
       showPassword: false,
-      userPassword: "Chiken123456",
+      userPassword: "",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      username: "Chiken",
+      username: "",
       userRules: [v => !!v || "Username is required"],
-      email: "a@a.com",
+      email: "",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
@@ -63,15 +63,15 @@ export default {
   methods: {
     signup() {
       const newUser = {
-        user_name: this.username,
-        user_email: this.email,
-        user_password: this.userPassword
+        name: this.username,
+        email: this.email,
+        password: this.userPassword
       };
 
       APIServices.signup(newUser)
         .then(response => {
           localStorage.setItem("token", response.token);
-          this.$router.push("/home");
+          this.$router.push("/");
         })
         .catch(err => console.log(err));
     }

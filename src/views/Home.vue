@@ -23,7 +23,7 @@ export default {
       this.products = serviceProducts;
     });
 
-    this.$root.$on("mySearch", mySearch => this.search(mySearch));
+    // this.$root.$on("mySearch", mySearch => this.search(mySearch));
   },
   methods: {
     logout() {

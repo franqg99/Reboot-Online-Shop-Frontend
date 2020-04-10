@@ -18,7 +18,7 @@ export default {
     ProductList
   },
   mounted() {
-    Api.showProduct("ropa").then(serviceProducts => {
+    Api.showProduct("accesorios").then(serviceProducts => {
       console.log(serviceProducts);
       this.products = serviceProducts;
     });
